@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Firebase Hosting</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- <script defer src="/__/firebase/init.js?useEmulator=true"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseApp = firebase.initializeApp({
+        apiKey: "AIzaSyAQBhARePNNwrnINFUGBL6WgtxeGawrlOU",
+        authDomain: "preresign.firebaseapp.com",
+        projectId: "preresign",
+        storageBucket: "preresign.appspot.com",
+        messagingSenderId: "516428225583",
+        appId: "1:516428225583:web:8b07edb5b22356313abada",
+        measurementId: "G-W11TKTD412",
+      });
+    </script>
+  </head>
+
+  <body>
+      <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="logo.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+          />
+          <!-- Preresign -->
+          App title
+        </a>
+        <div class="form-inline">
+          <button
+            type="button"
+            class="btn btn-primary mr-sm-2"
+            id="authButton"
+          >
+            Login with Google
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary mr-sm-2"
+            id="fetchWatchlistButton"
+          >
+            Fetch Watchlist Identities
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary mr-sm-2"
+            id="fetchLeetcodeUsernameButton"
+          >
+            Fetch New Leetcode Data
+          </button>
+        </div>
+      </div>
+      </nav>
+    <div class="container mt-5">
+      <div class="row container justify-content-center">
+        <div class="col-4">
+          <div class="card p-2">
+            <h3>Add New Identity to your Watchlist</h3>
+            <form id="addUserForm">
+              <div class="form-group justify-content-center">
+                <input
+                  name="firstName"
+                  class="form-control mb-1"
+                  id="firstNameField"
+                  aria-describedby="firstNameField"
+                  placeholder="First Name"
+                />
+                <input
+                  name="lastName"
+                  class="form-control my-1"
+                  id="lastNameField"
+                  aria-describedby="lastNameField"
+                  placeholder="Last Name"
+                />
+                <input
+                  name="workEmail"
+                  class="form-control my-1"
+                  id="workEmailField"
+                  aria-describedby="workEmailField"
+                  placeholder="Work Email"
+                />
+                <input
+                  name="leetcodeUsername"
+                  class="form-control my-1"
+                  id="leetcodeUsernameField"
+                  aria-describedby="workEmailField"
+                  placeholder="Leetcode Username"
+                />
+                <input
+                  name="linkedinURL"
+                  class="form-control my-1"
+                  id="linkedinURLField"
+                  aria-describedby="linkedinURLField"
+                  placeholder="LinkedIn URL"
+                />
+                <input
+                  id="addUserFormSubmission"
+                  class="submit btn btn-success"
+                  type="submit"
+                  value="Submit"
+                />
+              </div>
+            </form>
+          </div>
+          <div id="output"></div>
+        </div>
+        <div class="col-8">
+          <table
+            id="identitiyTable"
+            type="table"
+            class="table table-bordered table-hover"
+          >
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Identity</th>
+                <th scope="col">Previous Leetcode Data</th>
+                <th scope="col">Current Leetcode Data</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
